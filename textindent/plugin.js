@@ -4,6 +4,11 @@ CKEDITOR.plugins.add( 'textindent', {
     lang: 'pt-br, en',
 	init: function( editor ) {
 
+        var indentation = editor.config.indentation;
+
+        if(indentation == 'undefined')
+            indentation = '50';
+
         if(editor.ui.addButton){
 
             editor.ui.addButton( 'textindent', {
@@ -17,9 +22,9 @@ CKEDITOR.plugins.add( 'textindent', {
             {
                 var style_textindente = new CKEDITOR.style({
                         element: 'p',
-                        styles: { 'text-indent': '50px' },
+                        styles: { 'text-indent': indentation+'px' },
                         overrides: [{
-                            element: 'text-indent', attributes: { 'size': '0'}
+                            element: 'text-indent', attributes: { 'size': indentation+'0'}
                         }]
                     });
 
@@ -27,7 +32,7 @@ CKEDITOR.plugins.add( 'textindent', {
                    editor.getCommand('insert').setState(CKEDITOR.TRISTATE_ON);
                 else
                    editor.getCommand('insert').setState(CKEDITOR.TRISTATE_OFF);
-                
+
         })
 
         editor.addCommand("insert", {
@@ -37,7 +42,7 @@ CKEDITOR.plugins.add( 'textindent', {
 
                 var style_textindente = new CKEDITOR.style({
                         element: 'p',
-                        styles: { 'text-indent': '50px' },
+                        styles: { 'text-indent': indentation+'px' },
                         overrides: [{
                             element: 'text-indent', attributes: { 'size': '0'}
                         }]
@@ -47,19 +52,17 @@ CKEDITOR.plugins.add( 'textindent', {
                         element: 'p',
                         styles: { 'text-indent': '0' },
                         overrides: [{
-                            element: 'text-indent', attributes: { 'size': '50px' }
+                            element: 'text-indent', attributes: { 'size': indentation+'px' }
                         }]
                     });
 
                 if( style_textindente.checkActive(editor.elementPath(), editor) ){
                     editor.fire('saveSnapshot');
                     editor.applyStyle(style_no_textindente);
-                    editor.fire('saveSnapshot');
                 }
                 else{
                     editor.fire('saveSnapshot');
                     editor.applyStyle(style_textindente);
-                    editor.fire('saveSnapshot');
                 }
 
             }
