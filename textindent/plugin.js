@@ -6,7 +6,7 @@ CKEDITOR.plugins.add( 'textindent', {
 
         var indentation = editor.config.indentation;
 
-        if(indentation == 'undefined')
+        if(typeof(indentation) == 'undefined')
             indentation = '50';
 
         if(editor.ui.addButton){
