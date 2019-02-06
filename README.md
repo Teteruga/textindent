@@ -4,15 +4,15 @@ Plugin for Ckeditor that add the ability to indent the first line of a paragraph
 
 ## Getting Started
 
-First you will need to download the plugin at ... 
+First you will need to download the plugin at [Text Indent](https://ckeditor.com/cke4/addon/textindent)
 
 ### Prerequisites
 
-You only need Ckeditor running
+You only need [Ckeditor](https://ckeditor.com/cke4/builder) running.
 
 ### Installing
 
-After downloading the plugin you will need to extract it in the plugins folders of Ckeditor and add the following
+After downloading the plugin you will need to extract it in the plugins folders of Ckeditor and add the following on you ckeditor call
 
 ```
   CKEDITOR.config.extraPlugins = 'textindent';
@@ -35,21 +35,27 @@ You can choose the key to bind to the plugin, or none at all, using the var inde
 By key name:
 ```
   CKEDITOR.replace("text", {
-   indentation: 'a',
+   indentationKey: 'a',
   });
 ```
 By KeyCode:
 ```
   CKEDITOR.replace("text", {
-    indentation: 65,
+    indentationKey: 65,
   });
 ```
 Disabling the key bind functionality:
 ```
   CKEDITOR.replace("text", {
-    indentation: false,
+    indentationKey: false,
   });
-```  
+```
+Or in the config.js using:
+```
+config.indentation = (value)
+config.indentationKey = (value)
+```
+
 For knowing the [KeyCode](https://keycode.info/) map.
 
 ## Authors
