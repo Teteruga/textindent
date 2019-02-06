@@ -25,7 +25,7 @@ Or you just need to download Ckeditor with the plugin selected and it will be wo
 You can choose the indentation value using the var indentation and sending a value acpetable by the text-indent property, the default is 50px.
 
 ```
-  CKEDITOR.replace("text", {
+  CKEDITOR.replace(yourTargetElement, {
      indentation: 10px,
   });
 ```                    
