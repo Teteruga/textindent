@@ -34,26 +34,26 @@ You can choose the key to bind to the plugin, or none at all, using the var inde
 
 By key name:
 ```
-  CKEDITOR.replace("text", {
+  CKEDITOR.replace(yourTargetElement, {
    indentationKey: 'a',
   });
 ```
 By KeyCode:
 ```
-  CKEDITOR.replace("text", {
+  CKEDITOR.replace(yourTargetElement, {
     indentationKey: 65,
   });
 ```
 Disabling the key bind functionality:
 ```
-  CKEDITOR.replace("text", {
+  CKEDITOR.replace(yourTargetElement, {
     indentationKey: false,
   });
 ```
 Or in the config.js using:
 ```
-config.indentation = (value)
-config.indentationKey = (value)
+config.indentation = yourValue
+config.indentationKey = yourValue
 ```
 
 For knowing the [KeyCode](https://keycode.info/) map.
