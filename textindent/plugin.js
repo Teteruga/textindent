@@ -58,12 +58,13 @@ CKEDITOR.plugins.add( 'textindent', {
                 var walker = new CKEDITOR.dom.walker( range ),
                 node;
 
+                var state = editor.getCommand('ident-paragraph').state;
+
                 while ( ( node = walker.next() ) ) {
                     if ( node.type == CKEDITOR.NODE_ELEMENT ) {
                         if(node.getName() === "p"){
                                 editor.fire('saveSnapshot');
-                                
-                                if( node.getStyle('text-indent') ){
+                                if( state == CKEDITOR.TRISTATE_ON){
                                     node.removeStyle("text-indent");
                                     editor.getCommand('ident-paragraph').setState(CKEDITOR.TRISTATE_OFF);
                                 }
@@ -81,7 +82,7 @@ CKEDITOR.plugins.add( 'textindent', {
     
                     editor.fire('saveSnapshot');
 
-                    if( node.getStyle('text-indent') ){
+                    if( state == CKEDITOR.TRISTATE_ON){
                         node.removeStyle("text-indent");
                         editor.getCommand('ident-paragraph').setState(CKEDITOR.TRISTATE_OFF);
                     }
