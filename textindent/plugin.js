@@ -17,7 +17,6 @@ CKEDITOR.plugins.add( 'textindent', {
             editor.ui.addButton( 'textindent', {
                 label: editor.lang.textindent.labelName,
                 command: 'ident-paragraph',
-                toolbar: 'ident-paragraph',
             });
         }
 
