@@ -26,7 +26,7 @@ You can choose the indentation value using the var indentation and sending a val
 
 ```
   CKEDITOR.replace(yourTargetElement, {
-     indentation: 10px,
+     indentation: "10px",
   });
 ```                    
 
