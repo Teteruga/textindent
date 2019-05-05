@@ -22,7 +22,6 @@ Or in your replace call
 
 ```
 extraPlugins: "textindent",
-
 ```
 
 Or you just need to download Ckeditor with the plugin selected and it will be working out of the box 
