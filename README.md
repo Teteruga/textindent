@@ -18,6 +18,13 @@ After downloading the plugin you will need to extract it in the plugins folders 
   CKEDITOR.config.extraPlugins = 'textindent';
 ```
 
+Or in your replace call
+
+```
+extraPlugins: "textindent",
+
+```
+
 Or you just need to download Ckeditor with the plugin selected and it will be working out of the box 
 
 ## Options
